@@ -1,22 +1,28 @@
 require("L5")
 
 function setup()
-  size(400, 400)
+  size(600, 600)
 
   -- Set the program title
   windowTitle("Project 2 Barn Quilt")
-  risoPink = (255, 72, 176)
-  risoBlue = (0, 120, 191)
-  risoYellow = (255, 232, 0)
-end
+  --riso pink
+  risoPinkR = 255
+  risoPinkG = 72
+  risoPinkB = 176
+
+--riso yellow
+  risoYellowR = 255
+  risoYellowG = 232
+  risoYellowB = 0
+  
 
 function drawMiddleSquare()
-end 
+  end
 
 function draw()
-end 
+  end
 
 fill(0)
  text("X: "..mouseX.."  Y: "..mouseY, mouseX+5,mouseY+30)
- 
+
 end

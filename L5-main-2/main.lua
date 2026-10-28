@@ -17,12 +17,12 @@ function setup()
   
 
 function drawMiddleSquare()
+  rect()
   end
 
 function draw()
-  end
-
+background (255)
 fill(0)
- text("X: "..mouseX.."  Y: "..mouseY, mouseX+5,mouseY+30)
-
+text("X: "..mouseX.."  Y: "..mouseY, mouseX+5,mouseY+30)
+end
 end

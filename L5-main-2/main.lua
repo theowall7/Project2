@@ -5,24 +5,28 @@ function setup()
 
   -- Set the program title
   windowTitle("Project 2 Barn Quilt")
-  --riso pink
-  risoPinkR = 255
-  risoPinkG = 72
-  risoPinkB = 176
-
---riso yellow
-  risoYellowR = 255
-  risoYellowG = 232
-  risoYellowB = 0
-  
-
-function drawMiddleSquare()
-  rect()
+  background(255)
+  drawMiddleRectangle()
   end
 
-function draw()
-background (255)
-fill(0)
-text("X: "..mouseX.."  Y: "..mouseY, mouseX+5,mouseY+30)
-end
-end
+  function draw()
+  background(255)
+
+  drawMiddleRectangle()
+  fill(0)
+  text("X: "..mouseX.."  Y: "..mouseY, mouseX+5,mouseY+30)
+  end
+
+  function drawMiddleRectangle()
+  noStroke()
+  fill(0)
+  rect(277, 280, 70, 70)
+  end 
+
+ 
+
+
+
+
+
+ 

@@ -8,18 +8,9 @@ function setup()
   background(255)
   drawMiddleRectangle()
   drawMiddleDiamond()
-  drawFirstLayer()
   end
 
-  function draw()
-  background(255)
-
-  drawMiddleRectangle()
-  drawMiddleDiamond()
-  drawFirstLayer()
-  fill(0)
-  text("X: "..mouseX.."  Y: "..mouseY, mouseX+5,mouseY+30)
-  end
+ 
 
   function drawMiddleRectangle()
   noStroke()
@@ -36,19 +27,12 @@ function setup()
   triangle (298, 350, 242, 285, 350, 285)
   end 
 
-  middleRect = function drawMiddleRectangle()
-  middleDiamd = function drawMiddleDiamond()
-
   function drawFirstLayer()
-    background (255)
-    random (middleRect, middleDiamd)
+    background(255)
+    random (drawMiddleDiamond(), drawMiddleRectangle())
   end
-  
 
   function mousePressed()
-    drawMiddleRectangle()
-    drawMiddleDiamond()
-    drawFirstLayer()
   end
   
 

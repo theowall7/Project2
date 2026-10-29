@@ -19,9 +19,15 @@ function setup()
 
   function drawMiddleRectangle()
   noStroke()
-  fill(0)
-  rect(277, 280, 70, 70)
+  fill(random (255, 72, 176), random (0, 120, 191), random (255, 232, 0),random (255, 72, 176, 75), random (0, 120, 191, 75), random (255, 232, 0, 75))
+  fill(random (255, 72, 176), random (0, 120, 191), random (255, 232, 0),random (255, 72, 176, 75), random (0, 120, 191, 75), random (255, 232, 0, 75))
+  rect(260, 260, 70, 70)
   end 
+  
+  function mousePressed()
+    drawMiddleRectangle ()
+  end
+  
 
  
 

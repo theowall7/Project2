@@ -1,5 +1,4 @@
 require("L5")
-
 function setup()
 size(600, 600)
 
@@ -9,18 +8,6 @@ background(255)
 drawMiddleRectangle()
 drawMiddleDiamond()
 diamondShapeOne = true
-
-risoBlueR = 0
-risoBlueG = 120
-risoBlueB = 191
-
-risoPinkR = 255
-risoPinkG = 72
-risoPinkB = 176
-
-risoYellowR = 255
-risoYellowG = 232
-risoYellowB = 0
 
 end
 
@@ -43,27 +30,26 @@ end
 end
 end
 
-  function drawMiddleRectangle()
+
+function drawMiddleRectangle()
     noStroke()
-    fill(random (risoBlueR, risoBlueG, risoBlueB,risoPinkR,risoPinkG, risoPinkB, risoYellowR, risoYellowG, risoYellowB))
-    fill(random (risoBlueR, risoBlueG, risoBlueB,risoPinkR,risoPinkG, risoPinkB, risoYellowR, risoYellowG, risoYellowB))
+    fill(random (255, 72, 176),random(0,120, 191), random (255, 232, 0))
     rect(260, 260, 70, 70)
   end 
 
-  function drawMiddleDiamond()
+function drawMiddleDiamond()
     noStroke()
-    fill(random (risoBlueR, risoBlueG, risoBlueB,risoPinkR,risoPinkG, risoPinkB, risoYellowR, risoYellowG, risoYellowB))
-    fill(random (risoBlueR, risoBlueG, risoBlueB,risoPinkR,risoPinkG, risoPinkB, risoYellowR, risoYellowG, risoYellowB))
+    fill(random(0,120, 191), random (255, 72, 176), random (255, 232, 0))
     triangle (298, 230, 242, 285, 350, 285)
     triangle (298, 340, 242, 285, 350, 285)
   end 
 
-  function drawFirstLayer()
+function drawFirstLayer()
     background(255)
     random (drawMiddleDiamond(), drawMiddleRectangle())
   end
 
-  function mousePressed()
+function mousePressed()
   end
   
 

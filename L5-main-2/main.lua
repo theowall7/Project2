@@ -67,7 +67,6 @@ function drawMiddleRectangle()
 
     for i = 1, 9, 1 do
     for j = 1, 9, 1 do
-      
       currentColor = random(colorChoices)
       currentAlpha = random(alphaChoices)
       if currentColor == "blue" then
@@ -109,8 +108,8 @@ function drawFirstLayer()
     random (drawMiddleDiamond(), drawMiddleRectangle())
   end
 
-function mousePressed()
-  end
+
+  
   
 
  

@@ -9,6 +9,19 @@ background(255)
 drawMiddleRectangle()
 drawMiddleDiamond()
 diamondShapeOne = true
+
+risoBlueR = 0
+risoBlueG = 120
+risoBlueB = 191
+
+risoPinkR = 255
+risoPinkG = 72
+risoPinkB = 176
+
+risoYellowR = 255
+risoYellowG = 232
+risoYellowB = 0
+
 end
 
 function draw()
@@ -32,15 +45,15 @@ end
 
   function drawMiddleRectangle()
     noStroke()
-    fill(random (255, 72, 176), random (0, 120, 191), random (255, 232, 0),random (255, 72, 176, 75), random (0, 120, 191, 75), random (255, 232, 0, 75))
-    fill(random (255, 72, 176), random (0, 120, 191), random (255, 232, 0),random (255, 72, 176, 75), random (0, 120, 191, 75), random (255, 232, 0, 75))
+    fill(random (risoBlueR, risoBlueG, risoBlueB,risoPinkR,risoPinkG, risoPinkB, risoYellowR, risoYellowG, risoYellowB))
+    fill(random (risoBlueR, risoBlueG, risoBlueB,risoPinkR,risoPinkG, risoPinkB, risoYellowR, risoYellowG, risoYellowB))
     rect(260, 260, 70, 70)
   end 
 
   function drawMiddleDiamond()
     noStroke()
-    fill(random (255, 72, 176), random (0, 120, 191), random (255, 232, 0),random (255, 72, 176, 75), random (0, 120, 191, 75), random (255, 232, 0, 75))
-    fill(random (255, 72, 176), random (0, 120, 191), random (255, 232, 0),random (255, 72, 176, 75), random (0, 120, 191, 75), random (255, 232, 0, 75))
+    fill(random (risoBlueR, risoBlueG, risoBlueB,risoPinkR,risoPinkG, risoPinkB, risoYellowR, risoYellowG, risoYellowB))
+    fill(random (risoBlueR, risoBlueG, risoBlueB,risoPinkR,risoPinkG, risoPinkB, risoYellowR, risoYellowG, risoYellowB))
     triangle (298, 230, 242, 285, 350, 285)
     triangle (298, 340, 242, 285, 350, 285)
   end 

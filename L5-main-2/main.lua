@@ -39,26 +39,38 @@ windowTitle("Project 2 Barn Quilt")
 background(255)
 drawMiddleRectangle()
 drawMiddleDiamond()
-drawBackRect()
+
 drawRectTwo()
 diamondShapeOne = true
+
 end
 
 function draw()
-background(255)
+  background(255)
 
-if diamondShapeOne then
-drawMiddleDiamond()
-else
+  if currentColor == "blue" then
+    fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
+  elseif currentColor == "pink" then
+     fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+  else
+    fill(risoYellowR,risoYellowG, risoYellowB, currentAlpha)
+      end
+
+    noStroke()
+    rect(20, 20, 560, 560)
+
+    
+  if diamondShapeOne then
+  drawMiddleDiamond()
+      else
 drawMiddleRectangle()
-drawBackRect()
-
-end
+  end
 
 fill(0)
 text("X: " .. mouseX .. " Y: " .. mouseY, mouseX + 5, mouseY + 30)
 
-if frameCount % 280 == 0 then
+
+if frameCount % 400 == 0 then
 if diamondShapeOne then
 diamondShapeOne = false
 elseif not diamondShapeOne then
@@ -69,21 +81,6 @@ currentAlpha = random(alphaChoices)
 end
 end
 
-function drawBackRect()
-  for i = 1, 9, 1 do
-    for j = 1, 9, 1 do
-      if currentColor == "blue" then
-        fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
-      elseif currentColor == "pink" then
-        fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
-      else
-        fill(risoYellowR,risoYellowG, risoYellowB, currentAlpha)
-      end
-    noStroke()
-    rect(20, 20, 560, 560)
-  end 
-end
-end
 
 function drawRectTwo()
   for i = 1, 9, 1 do
@@ -96,7 +93,7 @@ function drawRectTwo()
         fill(risoYellowR,risoYellowG, risoYellowB, currentAlpha)
       end
     noStroke()
-    rect(215, 215, 100, 100)
+    rect(230, 230, 150, 150)
   end 
 end
 end

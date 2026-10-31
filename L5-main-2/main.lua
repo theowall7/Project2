@@ -39,17 +39,22 @@ windowTitle("Project 2 Barn Quilt")
 background(255)
 drawMiddleRectangle()
 drawMiddleDiamond()
+drawBackRect()
+drawRectTwo()
 diamondShapeOne = true
-
 end
 
 function draw()
 background(255)
+
 if diamondShapeOne then
 drawMiddleDiamond()
 else
 drawMiddleRectangle()
+drawBackRect()
+
 end
+
 fill(0)
 text("X: " .. mouseX .. " Y: " .. mouseY, mouseX + 5, mouseY + 30)
 
@@ -59,16 +64,47 @@ diamondShapeOne = false
 elseif not diamondShapeOne then
 diamondShapeOne = true
 end
+currentColor = random(colorChoices)
+currentAlpha = random(alphaChoices)
 end
 end
 
+function drawBackRect()
+  for i = 1, 9, 1 do
+    for j = 1, 9, 1 do
+      if currentColor == "blue" then
+        fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
+      elseif currentColor == "pink" then
+        fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+      else
+        fill(risoYellowR,risoYellowG, risoYellowB, currentAlpha)
+      end
+    noStroke()
+    rect(20, 20, 560, 560)
+  end 
+end
+end
+
+function drawRectTwo()
+  for i = 1, 9, 1 do
+    for j = 1, 9, 1 do
+      if currentColor == "blue" then
+        fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
+      elseif currentColor == "pink" then
+        fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+      else
+        fill(risoYellowR,risoYellowG, risoYellowB, currentAlpha)
+      end
+    noStroke()
+    rect(215, 215, 100, 100)
+  end 
+end
+end
 
 function drawMiddleRectangle()
 
     for i = 1, 9, 1 do
     for j = 1, 9, 1 do
-      currentColor = random(colorChoices)
-      currentAlpha = random(alphaChoices)
       if currentColor == "blue" then
         fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
       elseif currentColor == "pink" then
@@ -86,9 +122,6 @@ function drawMiddleDiamond()
   
    for i = 1, 9, 1 do
     for j = 1, 9, 1 do
-     
-      currentColor = random(colorChoices)
-      currentAlpha = random(alphaChoices)
       if currentColor == "blue" then
         fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
       elseif currentColor == "pink" then
@@ -103,10 +136,7 @@ function drawMiddleDiamond()
   end 
 end
 
-function drawFirstLayer()
-    background(255)
-    random (drawMiddleDiamond(), drawMiddleRectangle())
-  end
+
 
 
   

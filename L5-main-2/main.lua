@@ -30,7 +30,8 @@ alphaChoices = {alpha1, alpha2, alpha3, alpha4, alpha5, alpha6, alpha7, alpha8}
 function setup()
 size(600, 600)
 
-shapeOneChoices = {"big diamond", "little border",}
+shapeOneChoices = {"big diamond", "little border", "octagon"}
+shapeTwoChoices = {"bunch of triangles"}
 
 -- Set the program title
 windowTitle("Project 2 Barn Quilt")
@@ -49,15 +50,35 @@ end
 function draw()
   background(255)
 
+  -- backgroud Square
+  if currentColor == "blue" then
+    fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
+  elseif currentColor == "pink" then
+     fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+  else
+    fill(risoYellowR,risoYellowG, risoYellowB, currentAlpha)
+      end
+    noStroke()
+    rect(20, 20, 560, 560)
 
+    
+      fill(255)
+      triangle(236, 158, 156, 237, 157, 160)
+      triangle(156, 237, 157, 355, 100, 289)
+    
+
+    -- big diamond, little border, or octagon 
   if currentShapeOne == "big diamond" then
+    fill (0)
     noStroke()
     triangle(300, 160, 157, 300, 435, 300)
     triangle (157, 300, 435, 300, 300, 436)
   elseif currentShapeOne == "little border" then
+    fill(0)
      noStroke()
     rect(156, 159, 280, 280)
   else
+    fill(0)
     noStroke()
     triangle (238, 158, 156, 236, 236, 238)
     triangle(238, 158,295, 237, 354, 159)
@@ -72,18 +93,6 @@ function draw()
   drawRectTwo()
 
   drawCornerTriangles()
-
-  if currentColor == "blue" then
-    fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
-  elseif currentColor == "pink" then
-     fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
-  else
-    fill(risoYellowR,risoYellowG, risoYellowB, currentAlpha)
-      end
-
-    noStroke()
-    rect(20, 20, 560, 560)
-
     
   if diamondShapeOne then
   drawMiddleDiamond()
@@ -91,7 +100,7 @@ function draw()
 drawMiddleRectangle()
   end
 
-fill(0)
+fill(255)
 text("X: " .. mouseX .. " Y: " .. mouseY, mouseX + 5, mouseY + 30)
 
 
@@ -101,6 +110,7 @@ diamondShapeOne = false
 elseif not diamondShapeOne then
 diamondShapeOne = true
 end
+
 
 if frameCount % 400 == 0 then
 if octagonShapeOne then

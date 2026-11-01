@@ -40,13 +40,17 @@ background(255)
 drawMiddleRectangle()
 drawMiddleDiamond()
 drawRectTwo()
+drawCornerTriangles()
 diamondShapeOne = true
 
 end
 
 function draw()
   background(255)
+
   drawRectTwo()
+
+  drawCornerTriangles()
 
   if currentColor == "blue" then
     fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
@@ -81,6 +85,29 @@ currentAlpha = random(alphaChoices)
 end
 end
 
+function drawCornerTriangles()
+  for i = 1, 9, 1 do
+    for j = 1, 9, 1 do
+      if currentColor == "blue" then
+        fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+      elseif currentColor == "pink" then
+        fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
+      else
+        fill(risoPinkR,risoPinkG, risoPinkB, currentAlpha)
+      end
+    noStroke()
+    triangle(236, 236, 295, 235, 236, 156)
+    triangle(236, 236, 235, 300, 155, 236)
+    triangle (294, 236, 355, 237, 355, 156)
+    triangle (355, 237, 355, 299, 436, 236)
+    triangle (355, 299,355, 356, 436, 352)
+    triangle (355, 355, 295, 355, 355, 436)
+    triangle (295, 355, 236, 355, 236, 436)
+    triangle (236, 355, 235, 300, 155, 355)
+    
+  end 
+end
+end
 
 function drawRectTwo()
   for i = 1, 9, 1 do

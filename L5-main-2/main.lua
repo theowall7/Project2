@@ -19,11 +19,6 @@ risoYellowB = 0
 alpha1 = 30
 alpha2 = 60
 alpha3 = 90
-alpha4 = 120
-alpha5 = 150
-alpha6 = 180
-alpha7 = 210
-alpha8 = 240
 
 --color option array
 colorChoices = {"blue","pink", "yellow"}
@@ -41,6 +36,7 @@ drawMiddleRectangle()
 drawMiddleDiamond()
 drawRectTwo()
 drawCornerTriangles()
+drawOctagon()
 diamondShapeOne = true
 
 end
@@ -51,6 +47,8 @@ function draw()
   drawRectTwo()
 
   drawCornerTriangles()
+
+  drawOctagon()
 
   if currentColor == "blue" then
     fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
@@ -82,6 +80,29 @@ diamondShapeOne = true
 end
 currentColor = random(colorChoices)
 currentAlpha = random(alphaChoices)
+end
+end
+
+function drawOctagon()
+  for i = 1, 9, 1 do
+    for j = 1, 9, 1 do
+      if currentColor == "blue" then
+        fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+      elseif currentColor == "pink" then
+        fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+      else
+        fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
+      end
+    noStroke()
+    triangle (238, 158, 156, 236, 236, 238)
+    triangle(238, 158,295, 237, 354, 159)
+    triangle (354, 159, 355, 237, 435, 237)
+    triangle (435, 237, 355, 298, 436, 352)
+    triangle(436, 352, 354, 356, 355, 434)
+    triangle (355, 434, 297, 352, 236, 434)
+    triangle (236, 434, 238, 355, 157, 355)
+    triangle(157, 355, 238, 302, 157, 238)
+  end 
 end
 end
 

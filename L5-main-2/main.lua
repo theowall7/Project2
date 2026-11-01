@@ -38,6 +38,7 @@ drawRectTwo()
 drawCornerTriangles()
 drawOctagon()
 diamondShapeOne = true
+octagonShapeOne = true
 
 end
 
@@ -80,6 +81,22 @@ diamondShapeOne = true
 end
 currentColor = random(colorChoices)
 currentAlpha = random(alphaChoices)
+end
+end
+
+function drawLittleBorder()
+  for i = 1, 9, 1 do
+    for j = 1, 9, 1 do
+      if currentColor == "blue" then
+        fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+      elseif currentColor == "pink" then
+        fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+      else
+        fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
+      end
+    noStroke()
+    
+  end 
 end
 end
 

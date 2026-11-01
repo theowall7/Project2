@@ -39,7 +39,6 @@ windowTitle("Project 2 Barn Quilt")
 background(255)
 drawMiddleRectangle()
 drawMiddleDiamond()
-
 drawRectTwo()
 diamondShapeOne = true
 
@@ -47,6 +46,7 @@ end
 
 function draw()
   background(255)
+  drawRectTwo()
 
   if currentColor == "blue" then
     fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
@@ -86,14 +86,14 @@ function drawRectTwo()
   for i = 1, 9, 1 do
     for j = 1, 9, 1 do
       if currentColor == "blue" then
-        fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
-      elseif currentColor == "pink" then
         fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+      elseif currentColor == "pink" then
+        fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
       else
-        fill(risoYellowR,risoYellowG, risoYellowB, currentAlpha)
+        fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
       end
     noStroke()
-    rect(230, 230, 150, 150)
+    rect(235, 235, 120, 120)
   end 
 end
 end
@@ -116,8 +116,7 @@ end
 end
 
 function drawMiddleDiamond()
-  
-   for i = 1, 9, 1 do
+  for i = 1, 9, 1 do
     for j = 1, 9, 1 do
       if currentColor == "blue" then
         fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
@@ -128,9 +127,9 @@ function drawMiddleDiamond()
       end
     end
     noStroke()
-    triangle (298, 230, 242, 285, 350, 285)
-    triangle (298, 340, 242, 285, 350, 285)
-  end 
+    triangle (295, 235, 235, 300, 355, 300)
+    triangle (295, 355, 235, 300, 355, 300)
+end
 end
 
 

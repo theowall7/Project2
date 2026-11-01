@@ -20,6 +20,7 @@ alpha1 = 30
 alpha2 = 60
 alpha3 = 90
 
+
 --color option array
 colorChoices = {"blue","pink", "yellow"}
 
@@ -28,6 +29,8 @@ alphaChoices = {alpha1, alpha2, alpha3, alpha4, alpha5, alpha6, alpha7, alpha8}
 
 function setup()
 size(600, 600)
+
+shapeOneChoices = {"big diamond", "little border",}
 
 -- Set the program title
 windowTitle("Project 2 Barn Quilt")
@@ -47,11 +50,24 @@ function draw()
   background(255)
 
 
-  if octagonShapeOne then
-  drawOctagon()
-      else
-  random(drawBigDiamond(), drawLittleBorder())
-  end
+  if currentShapeOne == "big diamond" then
+    noStroke()
+    triangle(300, 160, 157, 300, 435, 300)
+    triangle (157, 300, 435, 300, 300, 436)
+  elseif currentShapeOne == "little border" then
+     noStroke()
+    rect(156, 159, 280, 280)
+  else
+    noStroke()
+    triangle (238, 158, 156, 236, 236, 238)
+    triangle(238, 158,295, 237, 354, 159)
+    triangle (354, 159, 355, 237, 435, 237)
+    triangle (435, 237, 355, 298, 436, 352)
+    triangle(436, 352, 354, 356, 355, 434)
+    triangle (355, 434, 297, 352, 236, 434)
+    triangle (236, 434, 238, 355, 157, 355)
+    triangle(157, 355, 238, 302, 157, 238)
+      end
 
   drawRectTwo()
 
@@ -85,14 +101,17 @@ diamondShapeOne = false
 elseif not diamondShapeOne then
 diamondShapeOne = true
 end
+
 if frameCount % 400 == 0 then
 if octagonShapeOne then
 octagonShapeOne = false
 elseif not octagonShapeOne then
 octagonShapeOne = true
 end
+
 currentColor = random(colorChoices)
 currentAlpha = random(alphaChoices)
+currentShapeOne = random(shapeOneChoices)
 end
 end
 end

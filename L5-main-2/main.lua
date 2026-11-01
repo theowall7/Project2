@@ -37,19 +37,25 @@ drawMiddleDiamond()
 drawRectTwo()
 drawCornerTriangles()
 drawOctagon()
+drawLittleBorder()
+drawBigDiamond()
 diamondShapeOne = true
 octagonShapeOne = true
-
 end
 
 function draw()
   background(255)
 
+
+  if octagonShapeOne then
+  drawOctagon()
+      else
+  random(drawBigDiamond(), drawLittleBorder())
+  end
+
   drawRectTwo()
 
   drawCornerTriangles()
-
-  drawOctagon()
 
   if currentColor == "blue" then
     fill(risoBlueR,risoBlueG,risoBlueB,currentAlpha)
@@ -79,8 +85,33 @@ diamondShapeOne = false
 elseif not diamondShapeOne then
 diamondShapeOne = true
 end
+if frameCount % 400 == 0 then
+if octagonShapeOne then
+octagonShapeOne = false
+elseif not octagonShapeOne then
+octagonShapeOne = true
+end
 currentColor = random(colorChoices)
 currentAlpha = random(alphaChoices)
+end
+end
+end
+
+function drawBigDiamond()
+  for i = 1, 9, 1 do
+    for j = 1, 9, 1 do
+      if currentColor == "blue" then
+        fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+      elseif currentColor == "pink" then
+        fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+      else
+        fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
+      end
+    noStroke()
+    triangle(300, 160, 157, 300, 435, 300)
+    triangle (157, 300, 435, 300, 300, 436)
+    
+  end 
 end
 end
 
@@ -95,6 +126,7 @@ function drawLittleBorder()
         fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
       end
     noStroke()
+    rect(156, 159, 280, 280)
     
   end 
 end
@@ -196,17 +228,3 @@ function drawMiddleDiamond()
     triangle (295, 355, 235, 300, 355, 300)
 end
 end
-
-
-
-
-  
-  
-
- 
-
-
-
-
-
- 

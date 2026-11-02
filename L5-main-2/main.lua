@@ -19,7 +19,11 @@ risoYellowB = 0
 alpha1 = 30
 alpha2 = 60
 alpha3 = 90
-
+alpha4 = 120
+alpha5 = 150
+alpha6 = 180
+alpha7 = 210
+alpha8 = 240
 
 --color option array
 colorChoices = {"blue","pink", "yellow"}
@@ -61,7 +65,13 @@ function draw()
     noStroke()
     rect(20, 20, 560, 560)
 
-    fill(0)
+    if currentColor == "blue" then
+    fill(risoYellowR,risoYellowG,risoYellowB)
+  elseif currentColor == "pink" then
+     fill(risoBlueR,risoBlueG,risoBlueB)
+  else
+    fill(risoPinkR,risoPinkG, risoPinkB)
+      end
     rect(53, 70, 50, 483)
     rect(53, 510, 480, 50)
     rect(53, 40, 483, 50)

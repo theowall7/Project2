@@ -39,6 +39,7 @@ shapeTwoChoices = {"bunch of triangles"}
 
 -- Set the program title
 windowTitle("Project 2 Barn Quilt")
+save('myBarnQuilt.png')
 background(255)
 drawMiddleRectangle()
 drawMiddleDiamond()
@@ -84,9 +85,9 @@ function draw()
       noStroke()
       if currentColor == "blue" then
     fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
-  elseif currentColor == "pink" then
+    elseif currentColor == "pink" then
      fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
-  else
+    else
     fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
       end
       rect(60, 45 +i*60, 35, 35)
@@ -177,9 +178,7 @@ function draw()
 drawMiddleRectangle()
   end
 
--- mouse coords 
-fill(255)
-text("X: " .. mouseX .. " Y: " .. mouseY, mouseX + 5, mouseY + 30)
+
 
 -- middle diamond or rectangle timer
 if frameCount % 400 == 0 then
@@ -333,5 +332,11 @@ function drawMiddleDiamond()
     noStroke()
     triangle (295, 235, 235, 300, 355, 300)
     triangle (295, 355, 235, 300, 355, 300)
+  end
 end
+
+function keyPressed()
+  if (key == "s")
+  then save ("Barn Quilt")
+  end
 end

@@ -82,18 +82,47 @@ function draw()
     -- side squares
      for i = 1, 7, 1 do
       noStroke()
-      fill(0, currentAlpha)
+      if currentColor == "blue" then
+    fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+  elseif currentColor == "pink" then
+     fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+  else
+    fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
+      end
       rect(60, 45 +i*60, 35, 35)
      end
      for i = 1, 7, 1 do
       noStroke()
-      fill(0, currentAlpha)
+      if currentColor == "blue" then
+    fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+  elseif currentColor == "pink" then
+     fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+  else
+    fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
+      end
       rect(519, 45 +i*60, 35, 35)
      end
      for i = 1, 7, 1 do
       noStroke()
-      fill(0, currentAlpha)
+      if currentColor == "blue" then
+    fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+  elseif currentColor == "pink" then
+     fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+  else
+    fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
+      end
       rect(45 +i*60, 47, 35, 35)
+     end
+      for i = 1, 7, 1 do
+      noStroke()
+      if currentColor == "blue" then
+    fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+  elseif currentColor == "pink" then
+     fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+  else
+    fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
+      end
+      rect(45 +i*60, 518, 35, 35)
      end
 
 

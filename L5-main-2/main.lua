@@ -78,6 +78,25 @@ function draw()
     rect(53, 510, 480, 50)
     rect(53, 40, 483, 50)
     rect (510, 40, 50, 520)
+ 
+    -- side squares
+     for i = 1, 7, 1 do
+      noStroke()
+      fill(0, currentAlpha)
+      rect(60, 45 +i*60, 35, 35)
+     end
+     for i = 1, 7, 1 do
+      noStroke()
+      fill(0, currentAlpha)
+      rect(519, 45 +i*60, 35, 35)
+     end
+     for i = 1, 7, 1 do
+      noStroke()
+      fill(0, currentAlpha)
+      rect(45 +i*60, 47, 35, 35)
+     end
+
+
 
     -- corner triangles 
     if currentColor == "blue" then

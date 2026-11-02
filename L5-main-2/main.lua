@@ -61,6 +61,12 @@ function draw()
     noStroke()
     rect(20, 20, 560, 560)
 
+    fill(0)
+    rect(53, 70, 50, 483)
+    rect(53, 510, 480, 50)
+    rect(53, 40, 483, 50)
+    rect (510, 40, 50, 520)
+
     
     if currentColor == "blue" then
     fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)

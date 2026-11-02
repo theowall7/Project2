@@ -51,6 +51,7 @@ diamondShapeOne = true
 octagonShapeOne = true
 end
 
+-- main draw function 
 function draw()
   background(255)
 
@@ -65,6 +66,7 @@ function draw()
     noStroke()
     rect(20, 20, 560, 560)
 
+    -- boder base
     if currentColor == "blue" then
     fill(risoYellowR,risoYellowG,risoYellowB)
   elseif currentColor == "pink" then
@@ -77,7 +79,7 @@ function draw()
     rect(53, 40, 483, 50)
     rect (510, 40, 50, 520)
 
-    
+    -- corner triangles 
     if currentColor == "blue" then
     fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
   elseif currentColor == "pink" then
@@ -114,20 +116,24 @@ function draw()
     triangle(157, 355, 238, 302, 157, 238)
       end
 
+   -- second rectangle
   drawRectTwo()
 
+  -- star-shaped corner triangles
   drawCornerTriangles()
     
+  -- middle diamond or middle rectangle
   if diamondShapeOne then
   drawMiddleDiamond()
       else
 drawMiddleRectangle()
   end
 
+-- mouse coords 
 fill(255)
 text("X: " .. mouseX .. " Y: " .. mouseY, mouseX + 5, mouseY + 30)
 
-
+-- middle diamond or rectangle timer
 if frameCount % 400 == 0 then
 if diamondShapeOne then
 diamondShapeOne = false
@@ -135,21 +141,15 @@ elseif not diamondShapeOne then
 diamondShapeOne = true
 end
 
-
-if frameCount % 400 == 0 then
-if octagonShapeOne then
-octagonShapeOne = false
-elseif not octagonShapeOne then
-octagonShapeOne = true
-end
-
+-- current color, alpha, shape 
 currentColor = random(colorChoices)
 currentAlpha = random(alphaChoices)
 currentShapeOne = random(shapeOneChoices)
 end
 end
-end
 
+
+-- big diamond function
 function drawBigDiamond()
   for i = 1, 9, 1 do
     for j = 1, 9, 1 do
@@ -168,6 +168,7 @@ function drawBigDiamond()
 end
 end
 
+-- little border function
 function drawLittleBorder()
   for i = 1, 9, 1 do
     for j = 1, 9, 1 do
@@ -185,6 +186,7 @@ function drawLittleBorder()
 end
 end
 
+-- octagon function
 function drawOctagon()
   for i = 1, 9, 1 do
     for j = 1, 9, 1 do
@@ -208,6 +210,7 @@ function drawOctagon()
 end
 end
 
+-- star shaped corner triangles function
 function drawCornerTriangles()
   for i = 1, 9, 1 do
     for j = 1, 9, 1 do
@@ -232,6 +235,7 @@ function drawCornerTriangles()
 end
 end
 
+-- second rectangle function
 function drawRectTwo()
   for i = 1, 9, 1 do
     for j = 1, 9, 1 do
@@ -248,6 +252,7 @@ function drawRectTwo()
 end
 end
 
+-- middle rectangle fucntion
 function drawMiddleRectangle()
 
     for i = 1, 9, 1 do
@@ -265,6 +270,7 @@ function drawMiddleRectangle()
 end
 end
 
+-- middle diamond function
 function drawMiddleDiamond()
   for i = 1, 9, 1 do
     for j = 1, 9, 1 do

@@ -62,23 +62,31 @@ function draw()
     rect(20, 20, 560, 560)
 
     
-      fill(255)
+    if currentColor == "blue" then
+    fill(risoPinkR,risoPinkG,risoPinkB,currentAlpha)
+  elseif currentColor == "pink" then
+     fill(risoYellowR,risoYellowG,risoYellowB,currentAlpha)
+  else
+    fill(risoBlueR,risoBlueG, risoBlueB, currentAlpha)
+      end
       triangle(236, 158, 156, 237, 157, 160)
-      triangle(156, 237, 157, 355, 100, 289)
+      triangle (355, 158, 434, 239, 435, 160)
+      triangle (155, 356, 245, 438, 156, 439)
+      triangle (356, 435, 435, 354, 437, 439 )
     
 
     -- big diamond, little border, or octagon 
   if currentShapeOne == "big diamond" then
-    fill (0)
+    fill (0, currentAlpha)
     noStroke()
     triangle(300, 160, 157, 300, 435, 300)
     triangle (157, 300, 435, 300, 300, 436)
   elseif currentShapeOne == "little border" then
-    fill(0)
+    fill(0, currentAlpha)
      noStroke()
     rect(156, 159, 280, 280)
   else
-    fill(0)
+    fill(0, currentAlpha)
     noStroke()
     triangle (238, 158, 156, 236, 236, 238)
     triangle(238, 158,295, 237, 354, 159)
